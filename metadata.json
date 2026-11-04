@@ -1,0 +1,6 @@
+{
+  "name": "IslamicityLink",
+  "description": "Infrastruktur cerdas platform komunitas muslim global, kolaborasi creator Lynk.id, zakat blockchain transparan, forum silaturahmi terenkripsi, geolokasi masjid, pengingat salat & donasi amal resmi.",
+  "requestFramePermissions": ["geolocation", "notifications", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

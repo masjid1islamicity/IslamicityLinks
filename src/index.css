@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  :root {
+    --bg-canvas: #F4F6F4;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #EAEFEA;
+    --border-color: #D8DFD8;
+    --text-primary: #141A14;
+    --text-muted: #5A665B;
+    --color-primary: #2E7D32;
+    --color-accent: #4CAF50;
+    --color-earth: #795548;
+  }
+
+  .dark {
+    --bg-canvas: #121412;
+    --bg-surface: #1A1D1A;
+    --bg-elevated: #242924;
+    --border-color: #2D332D;
+    --text-primary: #E4E8E4;
+    --text-muted: #A0A8A0;
+    --color-primary: #2E7D32;
+    --color-accent: #4CAF50;
+    --color-earth: #795548;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+/* Custom Leaflet Map & Popup Theming */
+.leaflet-container {
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #FFFFFF !important;
+  color: #141A14 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #D8DFD8 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.dark .leaflet-popup-content-wrapper {
+  background-color: #1A1D1A !important;
+  color: #E4E8E4 !important;
+  border: 1px solid #2D332D !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background-color: #FFFFFF !important;
+}
+
+.dark .leaflet-popup-tip {
+  background-color: #1A1D1A !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #FFFFFF !important;
+  color: #141A14 !important;
+  border-color: #D8DFD8 !important;
+}
+
+.dark .leaflet-control-zoom a {
+  background-color: #1A1D1A !important;
+  color: #E4E8E4 !important;
+  border-color: #2D332D !important;
+}
+
+/* Pulsing radar circle for User Location */
+@keyframes ping-slow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.radar-pulse-ring {
+  animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Custom Natural Tones Palette Utility Helpers */
+.bg-natural-canvas {
+  background-color: #F4F6F4;
+}
+.dark .bg-natural-canvas {
+  background-color: #121412;
+}
+
+.bg-natural-surface {
+  background-color: #FFFFFF;
+}
+.dark .bg-natural-surface {
+  background-color: #1A1D1A;
+}
+
+.bg-natural-elevated {
+  background-color: #EAEFEA;
+}
+.dark .bg-natural-elevated {
+  background-color: #242924;
+}
+
+.border-natural {
+  border-color: #D8DFD8;
+}
+.dark .border-natural {
+  border-color: #2D332D;
+}
+
+.text-natural-primary {
+  color: #141A14;
+}
+.dark .text-natural-primary {
+  color: #E4E8E4;
+}
+
+.text-natural-muted {
+  color: #5A665B;
+}
+.dark .text-natural-muted {
+  color: #A0A8A0;
+}
+
+/* Custom Scrollbar for Natural Tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2D332D;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2E7D32;
+}
